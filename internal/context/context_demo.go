@@ -20,6 +20,10 @@ func main() {
 	createWithValue()
 }
 
+// 说明：返回一个空的、不会被取消、没有截止时间的 Context, 通常用于整个请求处理的最顶层，作为其他 Context 的基础。这个
+// Context 不包含任何值，也不能被取消。
+// 场景：在构建一个 Web 服务器应用时，在处理 HTTP 请求的最开始，可以使用 Context.Background() 作为整个请求处理流程的起点，
+// 后续基于它创建带有请求特定信息（如请求ID、用户信息等）或带有取消、超时等功能的 Context。
 func createBackground() {
 	ctx := context.Background()
 	fmt.Println(ctx)
